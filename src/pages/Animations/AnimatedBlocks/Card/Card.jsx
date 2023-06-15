@@ -18,21 +18,23 @@ export const Card = () => {
     };
 
     return (
-        <div className='wrapper' onClick={handleToggle}>
-            <animated.div
-                className="card card__front"
-                style={{ opacity: opacity.to(o => 1 - o), transform }}
-            />
+        <div className='flip-card'>
+            <div className='wrapper' onClick={handleToggle}>
+                <animated.div
+                    className="card card__front"
+                    style={{ opacity: opacity.to(o => 1 - o), transform }}
+                />
 
-            <animated.div
-                className="card card__back"
-                style={{
-                    opacity,
-                    transform,
-                    rotateX: '180deg',
-                }}
-            />
-            <div className='done'>done</div>
+                <animated.div
+                    className="card card__back"
+                    style={{
+                        opacity,
+                        transform,
+                        rotateX: '180deg',
+                    }}
+                />
+                <div className='done'>done</div>
+            </div>
         </div>
     )
 };
