@@ -9,6 +9,8 @@ import burger from '../assets/icons/burger-menu.svg';
 import { languages, themes } from "../helpers/constants";
 import { setLanguage, setTheme } from "../redux/appSlice";
 import { useSpring, animated } from '@react-spring/web';
+import { Modal } from "../Components/CustomModal/Modal";
+import { ContactModal } from "./ContactModal/ContactModal";
 import "./navigation.scss";
 import "./dark.scss";
 import "./green.scss";
@@ -19,6 +21,7 @@ export const Navigation = ({ children }) => {
     const { language, theme } = useSelector(state => state.app);
     const [menuMobile, setMenuMobile] = useState(false);
     const [isHeader] = useState(true);
+    const [contactModal, setContactModal] = useState(false);
     const burgerRef = useRef();
     const mobileMenuRef = useRef();
     const { t } = useTranslation();
@@ -64,6 +67,14 @@ export const Navigation = ({ children }) => {
             if (menuMobile) setMenuMobile(false);
         }
     });
+
+    const handleContact = () => {
+        setContactModal(true);
+    };
+
+    const handleCloseContactModal = () => {
+        setContactModal(false);
+    };
 
     return (
         <>
@@ -181,7 +192,29 @@ export const Navigation = ({ children }) => {
                 )}
             </div>
 
+            {/* Content */}
             {children}
+
+            {/* Contact me button */}
+            <div className="contact-button">
+                <button onClick={handleContact}>Contact me</button>
+            </div>
+
+            {/* Contact me modal */}
+            {contactModal && (
+                <Modal
+                    title="Contact me"
+                    subtitle="Contact me"
+                    close={handleCloseContactModal}
+                    cancelBtn={true}
+                    submitBtn={false}
+                    isCancelBtn={true}
+                    isSubmitBtn={false}
+                    closeWithoutHide={true}
+                >
+                    <ContactModal />
+                </Modal>
+            )}
         </>
     )
 };
