@@ -38,4 +38,16 @@
         background: linear-gradient(to right, #f5af19, #f12711);
         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
+
+    .fp-prev {
+        left: 55px;
+    }
+
+    .fp-next {
+        right: 55px;
+    }
+}
+
+#fp-nav {
+    top: calc(50% + 60px);
 }
