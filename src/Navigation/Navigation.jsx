@@ -110,7 +110,7 @@ export const Navigation = ({ children }) => {
                             }}
                         >
                             <div className="link-container">
-                                <Link to="/404" className="link">Animations</Link>
+                                <Link to="/animations" className="link">Animations</Link>
                             </div>
                         </animated.div>
                         <animated.div
@@ -124,7 +124,7 @@ export const Navigation = ({ children }) => {
                             }}
                         >
                             <div className="link-container">
-                                <Link to="/404" className="link">Links</Link>
+                                <Link to="/links" className="link">Links</Link>
                             </div>
                         </animated.div>
 
@@ -176,14 +176,14 @@ export const Navigation = ({ children }) => {
                         </div>
                         <div className="link-container">
                             <Link
-                                to="/404"
+                                to="/animations"
                                 className="mobile-menu__link link"
                                 onClick={handleMenuMobile}
                             >Animations</Link>
                         </div>
                         <div className="link-container">
                             <Link
-                                to="/404"
+                                to="/links"
                                 className="mobile-menu__link link"
                                 onClick={handleMenuMobile}
                             >Links</Link>
