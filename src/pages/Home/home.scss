@@ -1,7 +1,4 @@
 .home {
-    margin-top: 60px;
-    height: calc(100vh - 60px);
-
     &.dark {
         background: #0f0c29;
         /* fallback for old browsers */
@@ -39,15 +36,30 @@
         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
 
+    .fp-arrow {
+        @media(max-width: 400px) {
+            top: auto;
+            bottom: 20px;
+        }
+    }
+
     .fp-prev {
         left: 55px;
+
+        @media(max-width: 400px) {
+            left: 80px;
+        }
     }
 
     .fp-next {
         right: 55px;
+
+        @media(max-width: 400px) {
+            right: 80px;
+        }
     }
 }
 
 #fp-nav {
-    top: calc(50% + 60px);
+    top: 50%;
 }
