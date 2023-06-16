@@ -24,6 +24,40 @@
             font-size: 16px;
         }
 
+        .top-text {
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Pattaya', sans-serif;
+        }
+
+        .list-title {
+            margin-left: 2rem;
+            margin: 10px 0;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Neucha', cursive;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10px;
+            font-family: 'Pattaya', sans-serif;
+        }
+
+        li {
+            margin: 5px 0;
+            padding-left: 2rem;
+            background-position: 0 0;
+            background-size: 1.6rem 1.6rem;
+            background-repeat: no-repeat;
+            background-image: url('../../../../../assets/icons/star.svg');
+        }
+
         &:first-child {
             width: 60%;
 
@@ -57,14 +91,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 200px;
-        width: 220px;
+        height: 250px;
+        width: 250px;
 
         .image-container {
-            border: 3px solid #fff;
+            border: 1px solid #fff;
             border-radius: 20px;
-            height: 200px;
-            width: 200px;
+            height: 250px;
+            width: 250px;
             overflow: hidden;
             position: absolute;
             left: 10px;

@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import avatar from '../../../../../assets/images/no-photo.png';
 import './slide1.scss';
+import { useTranslation } from 'react-i18next';
 
 export const Slide1 = () => {
     const [flipped, setFlipped] = useState(true);
+    const { t } = useTranslation();
 
     const [props] = useSpring({
         from: {
@@ -38,11 +40,16 @@ export const Slide1 = () => {
         <div className='slide1'>
             <animated.div className='block' style={props}>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    <br /><br />Dolores, corrupti ducimus quae mollitia pariatur repudiandae,
-                    <br /><br />quam odit neque, modi alias quibusdam rem doloremque
-                    <br /><br />libero incidunt numquam iusto minus nam quaerat ab.
-                    <br /><br />Nam possimus officia cum eveniet saepe, quibusdam aliquam voluptas.
+                    <p className='top-text'>{t("website developer")}</p>
+                    <h1>{t("hello")}</h1>
+                    <h2>{t("welcome_text")}</h2>
+                    <p className='list-title'>{t("about me")}:</p>
+                    <ul>
+                        <li>{t("experience: 4+ years in web development")}</li>
+                        <li>{`${t("front-end stack")}: React, Next.js, Typescript, Redux.`}</li>
+                        <li>{t("area of expertise")}</li>
+                        <li>{t("development for me")}</li>
+                    </ul>
                 </p>
             </animated.div>
 
