@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
 
     .title {
         font-size: 4em;
