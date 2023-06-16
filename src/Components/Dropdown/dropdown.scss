@@ -56,11 +56,10 @@
 
     .arrow {
         width: 10px;
-        transform: rotate(90deg);
         transition: 0.2s;
 
         &_up {
-            transform: rotate(-90deg);
+            transform: rotate(180deg);
             transition: 0.2s;
         }
     }

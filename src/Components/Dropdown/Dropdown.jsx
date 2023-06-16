@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useClickOutside } from '../../hooks/useClickOutside';
-import arrow from '../../assets/icons/arrow.svg';
+import arrow from '../../assets/icons/arrow.png';
 import './dropdown.scss';
 import { useTranslation } from 'react-i18next';
 
