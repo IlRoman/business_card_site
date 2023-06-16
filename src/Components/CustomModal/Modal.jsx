@@ -10,8 +10,8 @@ export const Modal = ({
     submitBtn,
     submit,
     disabled,
-    isCancelBtn = true,
-    isSubmitBtn = true,
+    isCancelBtn = false,
+    isSubmitBtn = false,
 }) => {
     const [animation, setAnimation] = useState(false);
     const ref = useRef();

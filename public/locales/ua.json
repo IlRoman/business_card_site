@@ -1,5 +1,5 @@
 {
-    "home": "Додому",
+    "home": "На головну",
     "animations": "Анімації",
     "work_experience": "Досвід роботи",
     "language": "Мова",
@@ -17,5 +17,7 @@
     "front-end stack": "Front-end технології",
     "area of expertise": "Сфери діяльності: Здоров'я, Електронна торгівля, Фітнес, ERP, CRM, Логістика, Маркетинг, Автомобілі, Соціальні мережі",
     "development for me": "Розвиток для мене є завданням, де ми можемо створити складні проекти та реалізувати найбільші рішення. Я маю part of the team, де ми можемо зробити мої професійні орієнтації та створити великі продукти.",
-    "Do not judge me strictly for the design, I'm not a designer": "Не судіть мене суворо за дизайн, адже я не дизайнер"
+    "Do not judge me strictly for the design, I'm not a designer": "Не судіть мене суворо за дизайн, адже я не дизайнер",
+    "libraries": "Бібліотеки",
+    "List of libraries that were used on this site": "Список бібліотек, які були використані на цьому сайті"
 }

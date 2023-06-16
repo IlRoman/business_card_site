@@ -13,7 +13,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Animations } from './pages/Animations/Animations';
 
 const App = () => {
   // set default language from localstorage
@@ -32,15 +31,6 @@ const App = () => {
             element={(
               <Navigation>
                 <Home />
-              </Navigation>)}
-          />
-
-          <Route
-            path="/animations"
-            exact
-            element={(
-              <Navigation>
-                <Animations />
               </Navigation>)}
           />
 

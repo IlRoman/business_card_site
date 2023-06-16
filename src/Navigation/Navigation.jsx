@@ -10,7 +10,7 @@ import { languages, themes } from "../helpers/constants";
 import { setLanguage, setTheme } from "../redux/appSlice";
 import { useSpring, animated } from '@react-spring/web';
 import { Modal } from "../Components/CustomModal/Modal";
-import { ContactModal } from "./ContactModal/ContactModal";
+import { TechModal } from "./TechModal/TechModal";
 import "./navigation.scss";
 import "./dark.scss";
 import "./green.scss";
@@ -21,7 +21,7 @@ export const Navigation = ({ children }) => {
     const { language, theme } = useSelector(state => state.app);
     const [menuMobile, setMenuMobile] = useState(false);
     const [isHeader] = useState(true);
-    const [contactModal, setContactModal] = useState(false);
+    const [techModal, setTechModal] = useState(false);
     const burgerRef = useRef();
     const mobileMenuRef = useRef();
     const { t } = useTranslation();
@@ -68,12 +68,12 @@ export const Navigation = ({ children }) => {
         }
     });
 
-    const handleContact = () => {
-        setContactModal(true);
+    const handleOpenModal = () => {
+        setTechModal(true);
     };
 
-    const handleCloseContactModal = () => {
-        setContactModal(false);
+    const handleCloseModal = () => {
+        setTechModal(false);
     };
 
     return (
@@ -101,7 +101,10 @@ export const Navigation = ({ children }) => {
                         </animated.div>
                         <animated.div
                             className="column desktop"
-                            onClick={() => handleToggle(1)}
+                            onClick={() => {
+                                handleToggle(1);
+                                handleOpenModal();
+                            }}
                             style={{
                                 scale: y.to({
                                     range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
@@ -110,7 +113,7 @@ export const Navigation = ({ children }) => {
                             }}
                         >
                             <div className="link-container">
-                                <Link to="/animations" className="link">{t("animations")}</Link>
+                                <button className="link">{t("libraries")}</button>
                             </div>
                         </animated.div>
                         <animated.div
@@ -181,11 +184,13 @@ export const Navigation = ({ children }) => {
                             >{t("home")}</Link>
                         </div>
                         <div className="link-container">
-                            <Link
-                                to="/animations"
+                            <button
+                                onClick={() => {
+                                    handleOpenModal();
+                                    handleMenuMobile();
+                                }}
                                 className="mobile-menu__link link"
-                                onClick={handleMenuMobile}
-                            >{t("animations")}</Link>
+                            >{t("libraries")}</button>
                         </div>
                         <div className="link-container">
                             <Link
@@ -204,24 +209,17 @@ export const Navigation = ({ children }) => {
             {/* Content */}
             {children}
 
-            {/* Contact me button */}
-            {/* <div className="contact-button">
-                <button onClick={handleContact}>Contact me</button>
-            </div> */}
-
-            {/* Contact me modal */}
-            {contactModal && (
+            {/* libraries modal */}
+            {techModal && (
                 <Modal
-                    title="Contact me"
-                    subtitle="Contact me"
-                    close={handleCloseContactModal}
+                    title={t("libraries")}
+                    subtitle={t("List of libraries that were used on this site")}
+                    close={handleCloseModal}
                     cancelBtn={true}
                     submitBtn={false}
-                    isCancelBtn={true}
-                    isSubmitBtn={false}
                     closeWithoutHide={true}
                 >
-                    <ContactModal />
+                    <TechModal />
                 </Modal>
             )}
         </>
