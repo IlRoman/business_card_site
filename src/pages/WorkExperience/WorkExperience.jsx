@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { BGAnimation } from '../BGAnimation/BGAnimation';
 import './work-experience.scss';
 
 const experienceArray = [
@@ -51,22 +52,23 @@ export const WorkExperience = () => {
 
     return (
         <div className={`work-experience ${theme.data}`}>
-            <div className='container'>
-                {experienceArray.map((elem, index) => {
-                    return (
-                        <div className='block' key={index}>
-                            <h2>{`Frontend Developer ${elem.date}`}</h2>
-                            <p>{elem.description}</p>
-                            <h2>Tools & technologies:</h2>
-                            <p>{elem.technologies}</p>
-                            <h2>Responsibilities:</h2>
-                            <p>{elem.responsibilities}</p>
-                        </div>
-                    )
-                })}
-
-                <h2 style={{ marginTop: 20 }}>And other small projects...</h2>
-            </div>
+            <BGAnimation>
+                <div className='container'>
+                    {experienceArray.map((elem, index) => {
+                        return (
+                            <div className='block' key={index}>
+                                <h2>{`Frontend Developer ${elem.date}`}</h2>
+                                <p>{elem.description}</p>
+                                <h2>Tools & technologies:</h2>
+                                <p>{elem.technologies}</p>
+                                <h2>Responsibilities:</h2>
+                                <p>{elem.responsibilities}</p>
+                            </div>
+                        )
+                    })}
+                    <h2 style={{ marginTop: 20 }}>And other small projects...</h2>
+                </div>
+            </BGAnimation>
         </div>
     )
 };

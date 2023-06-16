@@ -5,6 +5,7 @@ import { Page3 } from './Page3/Page3';
 import { useSelector } from "react-redux";
 import ReactFullpage from '@fullpage/react-fullpage';
 import "./home.scss";
+import { BGAnimation } from "../BGAnimation/BGAnimation";
 
 const SEL = "custom-section";
 const SECTION_SEL = `.${SEL}`;
@@ -27,21 +28,25 @@ export const Home = () => {
     const { theme } = useSelector(state => state.app);
 
     return (
-        <div className={`home ${theme.data}`}>
-            <ReactFullpage
-                debug /* Debug logging */
-                navigation={true}
-                sectionSelector={SECTION_SEL}
-                render={() => (
-                    <ReactFullpage.Wrapper>
-                        {fullpages.map(({ component, id }) => (
-                            <div key={id} className={SEL}>
-                                {component}
-                            </div>
-                        ))}
-                    </ReactFullpage.Wrapper>
-                )}
-            />
-        </div>
+        <>
+            <div className={`home ${theme.data}`}>
+                <BGAnimation>
+                    <ReactFullpage
+                        debug /* Debug logging */
+                        navigation={true}
+                        sectionSelector={SECTION_SEL}
+                        render={() => (
+                            <ReactFullpage.Wrapper>
+                                {fullpages.map(({ component, id }) => (
+                                    <div key={id} className={SEL}>
+                                        {component}
+                                    </div>
+                                ))}
+                            </ReactFullpage.Wrapper>
+                        )}
+                    />
+                </BGAnimation>
+            </div>
+        </>
     )
 };
