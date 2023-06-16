@@ -3,6 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 const language = localStorage.getItem('language');
 const theme = localStorage.getItem('theme');
 
+if (!language) localStorage.setItem('language', JSON.stringify({ title: 'English', data: 'en' }));
+if (!theme) localStorage.setItem('theme', JSON.stringify({ title: 'Dark', data: 'dark' }));
+
 const initialState = {
     language: language ? JSON.parse(language) : { title: 'English', data: 'en' },
     theme: theme ? JSON.parse(theme) : { title: 'Dark', data: 'dark' },
