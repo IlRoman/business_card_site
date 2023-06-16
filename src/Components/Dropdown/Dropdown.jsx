@@ -113,7 +113,7 @@ const CustomDropdown = ({
                         }}
                     />
                 ) : (
-                    <div className="input" style={{ color: value.color || '#000' }}>
+                    <div className="input" style={{ color: value?.color || '#000' }}>
                         {(!value || value.title === 'no options') ? placeholder : translate ? t(value.title) : value.title}
                     </div>
                 )}

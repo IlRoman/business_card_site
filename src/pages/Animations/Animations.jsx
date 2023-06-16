@@ -4,38 +4,28 @@ import { Range } from './AnimatedBlocks/Range/Range';
 import { Trembling } from './AnimatedBlocks/Trembling/Trembling';
 import { Card } from './AnimatedBlocks/Card/Card';
 import './animations.scss';
+import { useSelector } from 'react-redux';
 
 export const Animations = () => {
+    const { theme } = useSelector(state => state.app);
+
     return (
-        <div className='animations'>
+        <div className={`animations ${theme.data}`}>
             <div className="table">
-                <div className="row">
-                    <div className="cell">
-                        <PopupText />
-                    </div>
-                    <div className="cell">
-                        <AsyncPopup />
-                    </div>
-                    <div className="cell">
-                        <Range />
-                    </div>
-                    <div className="cell">
-                        <Trembling />
-                    </div>
+                <div className="cell">
+                    <PopupText />
                 </div>
-                <div className="row">
-                    <div className="cell">
-                        <Card />
-                    </div>
-                    <div className="cell"></div>
-                    <div className="cell"></div>
-                    <div className="cell"></div>
+                <div className="cell">
+                    <AsyncPopup />
                 </div>
-                <div className="row">
-                    <div className="cell"></div>
-                    <div className="cell"></div>
-                    <div className="cell"></div>
-                    <div className="cell"></div>
+                <div className="cell">
+                    <Range />
+                </div>
+                <div className="cell">
+                    <Trembling />
+                </div>
+                <div className="cell">
+                    <Card />
                 </div>
             </div>
         </div>

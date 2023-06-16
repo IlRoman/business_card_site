@@ -39,8 +39,6 @@ export const Trembling = () => {
                 }}>
                 Trembling
             </animated.div>
-
-            <div className='done'>done</div>
         </div>
     )
 };

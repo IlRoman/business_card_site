@@ -33,7 +33,6 @@ export const Card = () => {
                         rotateX: '180deg',
                     }}
                 />
-                <div className='done'>done</div>
             </div>
         </div>
     )

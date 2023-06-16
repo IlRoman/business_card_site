@@ -55,8 +55,6 @@ export const AsyncPopup = () => {
                     Two asynchronous animations in order - text float and color change
                 </animated.div>
             </div>
-
-            <div className='done'>done</div>
         </div>
     )
 };

@@ -31,8 +31,6 @@ export const PopupText = () => {
                     Popup Text
                 </animated.div>
             </div>
-
-            <div className='done'>done</div>
         </div>
     )
 };

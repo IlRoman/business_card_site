@@ -37,8 +37,6 @@ export const Range = () => {
             </div>
 
             <button onClick={handlePause}>Pause</button>
-
-            <div className='done'>done</div>
         </div>
     )
 };
