@@ -37,25 +37,25 @@
     }
 
     .fp-arrow {
-        @media(max-width: 400px) {
+        @media(max-width: 540px) {
             top: auto;
-            bottom: 80px;
+            bottom: 40px;
         }
     }
 
     .fp-prev {
         left: 55px;
 
-        @media(max-width: 400px) {
-            left: 80px;
+        @media(max-width: 540px) {
+            left: 10px;
         }
     }
 
     .fp-next {
         right: 55px;
 
-        @media(max-width: 400px) {
-            right: 80px;
+        @media(max-width: 540px) {
+            right: 10px;
         }
     }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
-import avatar from '../../../../../assets/images/no-photo.png';
+import avatar from '../../../../../assets/images/avatar.jpg';
 import './slide1.scss';
 import { useTranslation } from 'react-i18next';
 
@@ -39,18 +39,16 @@ export const Slide1 = () => {
     return (
         <div className='slide1'>
             <animated.div className='block' style={props}>
-                <p>
-                    <p className='top-text'>{t("website developer")}</p>
-                    <h1>{t("hello")}</h1>
-                    <h2>{t("welcome_text")}</h2>
-                    <p className='list-title'>{t("about me")}:</p>
-                    <ul>
-                        <li>{t("experience: 4+ years in web development")}</li>
-                        <li>{`${t("front-end stack")}: React, Next.js, Typescript, Redux.`}</li>
-                        <li>{t("area of expertise")}</li>
-                        <li>{t("development for me")}</li>
-                    </ul>
-                </p>
+                <p className='top-text'>{t("website developer")}</p>
+                <h1>{t("hello")}</h1>
+                <h2 className='welcome-text'>{t("welcome_text")}</h2>
+                <p className='about-me'>{t("about me")}:</p>
+                <ul>
+                    <li>{t("experience: 4+ years in web development")}</li>
+                    <li>{`${t("front-end stack")}: React, Next.js, Typescript, Redux.`}</li>
+                    <li>{t("area of expertise")}</li>
+                    <li>{t("development for me")}</li>
+                </ul>
             </animated.div>
 
             <div className='block'>
