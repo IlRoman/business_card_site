@@ -9,8 +9,8 @@
     padding: 0 100px;
 
     @media(max-width: 420px) {
-        justify-content: space-around;
         padding: 10px 40px 0 40px;
+        overflow: auto;
     }
 
     &.home-slide {

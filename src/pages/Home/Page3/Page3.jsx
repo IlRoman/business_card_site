@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import './main.scss';
+import './page3.scss';
 
 export const Page3 = () => {
     const { t } = useTranslation();
