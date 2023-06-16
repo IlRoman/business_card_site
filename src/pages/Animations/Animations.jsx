@@ -13,6 +13,7 @@ export const Animations = () => {
     return (
         <div className={`animations ${theme.data}`}>
             <BGAnimation>
+                <h1 className='title'>Some animation examples:</h1>
                 <div className="table">
                     <div className="cell">
                         <PopupText />

@@ -3,10 +3,9 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
 
     @media(max-width: 670px) {
-        // margin-top: 25px;
         flex-direction: column;
         height: calc(100vh - 60px);
     }
@@ -33,6 +32,7 @@
             margin-bottom: 10px;
             font-size: 40px;
             font-family: 'Pattaya', sans-serif;
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 
             @media(max-width: 420px) {
                 font-size: 20px;
@@ -49,6 +49,7 @@
             text-align: center;
             font-family: 'Neucha', cursive;
             letter-spacing: 4px;
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em black;
 
             @media(max-width: 420px) {
                 font-size: 1.5em;
@@ -60,6 +61,7 @@
             text-align: center;
             margin-top: 10px;
             font-family: 'Neucha', cursive;
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
         }
 
         .about-me {
@@ -67,6 +69,7 @@
             margin-left: 4rem;
             margin-top: 20px;
             font-size: 2em;
+            text-shadow: #FC0 1px 0 10px;
 
             @media(max-width: 420px) {
                 font-size: 16px;
@@ -81,6 +84,7 @@
             background-size: 1.6rem 1.6rem;
             background-repeat: no-repeat;
             background-image: url('../../../../../assets/icons/star.svg');
+            text-shadow: #FC0 1px 0 10px;
         }
 
         &:first-child {
@@ -126,7 +130,7 @@
             width: 250px;
             overflow: hidden;
             position: absolute;
-            left: 10px;
+            box-shadow: -4px 5px 40px 2px yellow;
 
             @media (max-width: 900px) {
                 height: 250px;

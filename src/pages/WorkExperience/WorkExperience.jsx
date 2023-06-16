@@ -66,7 +66,7 @@ export const WorkExperience = () => {
                             </div>
                         )
                     })}
-                    <h2 style={{ marginTop: 20 }}>And other small projects...</h2>
+                    <h2 className='bottom-text'>And other small projects...</h2>
                 </div>
             </BGAnimation>
         </div>
