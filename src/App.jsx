@@ -6,6 +6,7 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { Home } from "./pages/Home/Home";
 import { Navigation } from './Navigation/Navigation';
+import { WorkExperience } from './pages/WorkExperience/WorkExperience';
 import { Page404 } from "./pages/Page404/Page404";
 import {
   BrowserRouter,
@@ -40,6 +41,15 @@ const App = () => {
             element={(
               <Navigation>
                 <Animations />
+              </Navigation>)}
+          />
+
+          <Route
+            path="/experience"
+            exact
+            element={(
+              <Navigation>
+                <WorkExperience />
               </Navigation>)}
           />
 

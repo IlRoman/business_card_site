@@ -124,7 +124,10 @@ export const Navigation = ({ children }) => {
                             }}
                         >
                             <div className="link-container">
-                                <Link to="/experience" className="link">{t("work_experience")}</Link>
+                                <Link to="/experience" className="link">
+                                    <div>{t("work_experience")}</div>
+                                    <div>{'(English only)'}</div>
+                                </Link>
                             </div>
                         </animated.div>
 
@@ -189,7 +192,10 @@ export const Navigation = ({ children }) => {
                                 to="/experience"
                                 className="mobile-menu__link link"
                                 onClick={handleMenuMobile}
-                            >{t("work_experience")}</Link>
+                            >
+                                <div>{t("work_experience")}</div>
+                                <div>{'(English only)'}</div>
+                            </Link>
                         </div>
                     </div>
                 )}

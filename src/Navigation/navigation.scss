@@ -39,6 +39,7 @@
     .link-container {
         width: calc(100% - 20px);
         height: calc(100% - 10px);
+        padding: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,6 +57,7 @@
         justify-content: center;
         align-items: center;
         color: white;
+        flex-direction: column;
     }
 
     .dropdown {
@@ -83,7 +85,7 @@
         box-shadow: 0px 3px 15px #0000000f;
 
         .link-container {
-            height: 40px;
+            height: 60px;
         }
     }
 }
