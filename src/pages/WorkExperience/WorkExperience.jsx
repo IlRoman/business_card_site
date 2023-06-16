@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { BGAnimation } from '../BGAnimation/BGAnimation';
+import star from '../../assets/icons/star.svg';
 import './work-experience.scss';
 
 const experienceArray = [
@@ -57,12 +58,21 @@ export const WorkExperience = () => {
                     {experienceArray.map((elem, index) => {
                         return (
                             <div className='block' key={index}>
-                                <h2>{`Frontend Developer ${elem.date}`}</h2>
-                                <p>{elem.description}</p>
-                                <h2>Tools & technologies:</h2>
-                                <p>{elem.technologies}</p>
-                                <h2>Responsibilities:</h2>
-                                <p>{elem.responsibilities}</p>
+                                <div className='text-container'>
+                                    <h2>{`Frontend Developer ${elem.date}`}</h2>
+                                    <p>{elem.description}</p>
+                                    <h2>Tools & technologies:</h2>
+                                    <p>{elem.technologies}</p>
+                                    <h2>Responsibilities:</h2>
+                                    <p>{elem.responsibilities}</p>
+                                </div>
+                                <div className='stars-container'>
+                                    <img src={star} alt="star" />
+                                    <img src={star} alt="star" />
+                                    <img src={star} alt="star" />
+                                    <img src={star} alt="star" />
+                                    <img src={star} alt="star" />
+                                </div>
                             </div>
                         )
                     })}
