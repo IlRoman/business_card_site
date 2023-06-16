@@ -2,8 +2,8 @@ import './bg-animation.scss';
 
 export const BGAnimation = ({ children }) => {
     return (
-        <div class="bg-animation">
-            <ul class="circles">
+        <div className="bg-animation">
+            <ul className="circles">
                 <li></li>
                 <li></li>
                 <li></li>

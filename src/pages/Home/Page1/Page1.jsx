@@ -34,7 +34,11 @@ export const Page1 = () => {
         setTimeout(() => {
             setFlipped(prev => !prev);
         }, 500)
-    }, [])
+    }, []);
+
+    const handleFlip = () => {
+        setFlipped(prev => !prev)
+    };
 
     return (
         <div className='page1'>
@@ -52,7 +56,7 @@ export const Page1 = () => {
             </animated.div>
 
             <div className='block'>
-                <div className='wrapper'>
+                <div className='wrapper pointer' onClick={handleFlip}>
                     <animated.div
                         className='image-container'
                         style={{ opacity: opacity.to(o => 1 - o), transform }}
@@ -67,7 +71,9 @@ export const Page1 = () => {
                             transform,
                             rotateX: '180deg',
                         }}
-                    />
+                    >
+                        <img src={avatar} alt="avatar" />
+                    </animated.div>
                 </div>
             </div>
         </div>
