@@ -15,22 +15,22 @@ export const languages = [
 
 export const themes = [
     {
-        title: 'Green',
+        title: 'green',
         data: 'green',
         color: '#2cdb49'
     },
     {
-        title: 'Dark',
+        title: 'dark',
         data: 'dark',
         color: '#231d3b'
     },
     {
-        title: 'Violet',
+        title: 'violet',
         data: 'violet',
         color: '#9221a3'
     },
     {
-        title: 'Orange',
+        title: 'orange',
         data: 'orange',
         color: '#eb5234'
     }

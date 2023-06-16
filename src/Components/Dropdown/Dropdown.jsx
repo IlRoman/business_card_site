@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { useClickOutside } from '../../hooks/useClickOutside';
 import arrow from '../../assets/icons/arrow.svg';
 import './dropdown.scss';
+import { useTranslation } from 'react-i18next';
 
-const defaultOptions = [{ title: 'No Options', data: 'No options' }];
+const defaultOptions = [{ title: 'no options', data: 'no options' }];
 
 const CustomDropdown = ({
     placeholder,
@@ -11,18 +12,20 @@ const CustomDropdown = ({
     value,
     onChange,
     options,
-    serch = true,
+    isSearch = true,
     autoComplete,
     disabled = false,
     isCancelButton = false,
     selectVariant = 'bottom', // bottom | top
     label,
     labelColor = '#000',
+    translate = false,
 }) => {
     const [open, setOpen] = useState(false);
     const [search, setSearch] = useState(null);
     const [currentOptions, setCurrentOptions] = useState(options || defaultOptions);
     const ref = useRef();
+    const { t } = useTranslation();
 
     // set options by search
     useEffect(() => {
@@ -54,7 +57,12 @@ const CustomDropdown = ({
 
     const onOpen = () => setOpen(prev => !prev);
 
-    const getValue = () => value?.title || '';
+    const getValue = () =>
+        value.title
+            ? translate
+                ? t(value.title)
+                : value.title
+            : '';
 
     const getSearch = () => {
         if (search) return search;
@@ -90,13 +98,13 @@ const CustomDropdown = ({
                 className={`input-container ${formData?.hasError && formData?.touched ? 'input-container_error' : ''}`}
                 onClick={onOpen}
             >
-                {serch ? (
+                {isSearch ? (
                     <input
                         className="input"
                         placeholder={search !== '' ? placeholder : ''}
                         disabled={disabled}
                         type="text"
-                        value={getSearch() === 'No Options' ? '' : getSearch()}
+                        value={getSearch() === "no options" ? '' : getSearch()}
                         onChange={handleSearch}
                         autoComplete={autoComplete === true ? 'on' : 'none'}
                         style={{
@@ -106,7 +114,7 @@ const CustomDropdown = ({
                     />
                 ) : (
                     <div className="input" style={{ color: value.color || '#000' }}>
-                        {(!value || value.title === 'No Options') ? placeholder : value.title}
+                        {(!value || value.title === 'no options') ? placeholder : translate ? t(value.title) : value.title}
                     </div>
                 )}
 
@@ -136,10 +144,10 @@ const CustomDropdown = ({
                                     className="select__option"
                                     onClick={() => handleChange(option)}
                                     style={{ color: option.color || '#000' }}
-                                >{option.title}</div>
+                                >{translate ? t(option.title) : option.title}</div>
                             )
                         }))
-                    ) : <div className="select__option">No results</div>}
+                    ) : <div className="select__option">{t("no results")}</div>}
                 </div>
             )}
         </div>

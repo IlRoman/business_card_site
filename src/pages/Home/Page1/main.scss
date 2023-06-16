@@ -1,7 +1,9 @@
-.home-main {
+.page1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid #fff;
+    height: 100vh;
 
     @media(max-width: 400px) {
         justify-content: flex-start !important;

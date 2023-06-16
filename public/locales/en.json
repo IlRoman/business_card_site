@@ -1,6 +1,14 @@
 {
-    "hello": "Hello!",
-    "welcome_text": "Welcome to my business card site",
+    "home": "Home",
+    "animations": "Animations",
+    "work_experience": "Work experience",
     "language": "Language",
-    "change theme": "Change theme"
+    "change theme": "Change theme",
+    "green": "Green",
+    "dark": "Dark",
+    "violet": "Violet",
+    "orange": "Orange",
+    "no results": "No results",
+    "hello": "Hello!",
+    "welcome_text": "Welcome to my business card site"
 }

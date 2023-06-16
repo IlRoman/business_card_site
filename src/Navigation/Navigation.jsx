@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -96,7 +96,7 @@ export const Navigation = ({ children }) => {
                             }}
                         >
                             <div className="link-container">
-                                <Link to="/" className="link">Home</Link>
+                                <Link to="/" className="link">{t("home")}</Link>
                             </div>
                         </animated.div>
                         <animated.div
@@ -110,7 +110,7 @@ export const Navigation = ({ children }) => {
                             }}
                         >
                             <div className="link-container">
-                                <Link to="/animations" className="link">Animations</Link>
+                                <Link to="/animations" className="link">{t("animations")}</Link>
                             </div>
                         </animated.div>
                         <animated.div
@@ -124,7 +124,7 @@ export const Navigation = ({ children }) => {
                             }}
                         >
                             <div className="link-container">
-                                <Link to="/links" className="link">Links</Link>
+                                <Link to="/experience" className="link">{t("work_experience")}</Link>
                             </div>
                         </animated.div>
 
@@ -148,6 +148,7 @@ export const Navigation = ({ children }) => {
                                 options={languages}
                                 label={t('language')}
                                 labelColor="#fff"
+                                isSearch={false}
                             />
                         </div>
                         <div className="column dropdown">
@@ -156,8 +157,10 @@ export const Navigation = ({ children }) => {
                                 value={theme}
                                 onChange={onChangeTheme}
                                 options={themes}
+                                translate={true}
                                 label={t('change theme')}
                                 labelColor="#fff"
+                                isSearch={false}
                             />
                         </div>
                         <div />
@@ -172,21 +175,21 @@ export const Navigation = ({ children }) => {
                                 to="/"
                                 className="mobile-menu__link link"
                                 onClick={handleMenuMobile}
-                            >Home</Link>
+                            >{t("home")}</Link>
                         </div>
                         <div className="link-container">
                             <Link
                                 to="/animations"
                                 className="mobile-menu__link link"
                                 onClick={handleMenuMobile}
-                            >Animations</Link>
+                            >{t("animations")}</Link>
                         </div>
                         <div className="link-container">
                             <Link
-                                to="/links"
+                                to="/experience"
                                 className="mobile-menu__link link"
                                 onClick={handleMenuMobile}
-                            >Links</Link>
+                            >{t("work_experience")}</Link>
                         </div>
                     </div>
                 )}
@@ -196,9 +199,9 @@ export const Navigation = ({ children }) => {
             {children}
 
             {/* Contact me button */}
-            <div className="contact-button">
+            {/* <div className="contact-button">
                 <button onClick={handleContact}>Contact me</button>
-            </div>
+            </div> */}
 
             {/* Contact me modal */}
             {contactModal && (
