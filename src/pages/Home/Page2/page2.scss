@@ -1,11 +1,19 @@
 .page2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border-bottom: 2px solid #fff;
-    margin-top: 70px;
     height: calc(100vh - 70px);
+    overflow-y: auto;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 95px;
+
+        @media(max-width: 670px) {
+            flex-direction: column;
+            padding: 20px 40px;
+        }
+    }
 
     .title {
         font-size: 3em;

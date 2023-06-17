@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Page1 } from './Page1/Page1';
 import { Page2 } from './Page2/Page2';
 import { Page3 } from './Page3/Page3';
@@ -30,7 +29,7 @@ export const Home = () => {
     return (
         <div className={`home ${theme.data}`}>
             <BGAnimation>
-                {/* <ReactFullpage
+                <ReactFullpage
                     debug
                     navigation={true}
                     sectionSelector={SECTION_SEL}
@@ -43,7 +42,7 @@ export const Home = () => {
                             ))}
                         </ReactFullpage.Wrapper>
                     )}
-                /> */}
+                />
             </BGAnimation>
         </div>
     )

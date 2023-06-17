@@ -42,38 +42,40 @@ export const Page1 = () => {
 
     return (
         <div className='page1'>
-            <animated.div className='block' style={props}>
-                <p className='top-text'>{t("website developer")}</p>
-                <h1>{t("hello")}</h1>
-                <h2 className='welcome-text'>{t("welcome_text")}</h2>
-                <p className='about-me'>{t("about me")}:</p>
-                <ul>
-                    <li>{t("experience: 4+ years in web development")}</li>
-                    <li>{`${t("front-end stack")}: React, Next.js, Typescript, Redux.`}</li>
-                    <li>{t("area of expertise")}</li>
-                    <li>{t("development for me")}</li>
-                </ul>
-            </animated.div>
+            <div className='page1__wrapper'>
+                <animated.div className='block' style={props}>
+                    <p className='top-text'>{t("website developer")}</p>
+                    <h1>{t("hello")}</h1>
+                    <h2 className='welcome-text'>{t("welcome_text")}</h2>
+                    <p className='about-me'>{t("about me")}:</p>
+                    <ul>
+                        <li>{t("experience: 4+ years in web development")}</li>
+                        <li>{`${t("front-end stack")}: React, Next.js, Typescript, Redux.`}</li>
+                        <li>{t("area of expertise")}</li>
+                        <li>{t("development for me")}</li>
+                    </ul>
+                </animated.div>
 
-            <div className='block'>
-                <div className='wrapper pointer' onClick={handleFlip}>
-                    <animated.div
-                        className='image-container'
-                        style={{ opacity: opacity.to(o => 1 - o), transform }}
-                    >
-                        <img src={avatar} alt="avatar" />
-                    </animated.div>
+                <div className='block'>
+                    <div className='wrapper pointer' onClick={handleFlip}>
+                        <animated.div
+                            className='image-container'
+                            style={{ opacity: opacity.to(o => 1 - o), transform }}
+                        >
+                            <img src={avatar} alt="avatar" />
+                        </animated.div>
 
-                    <animated.div
-                        className='image-container back-side'
-                        style={{
-                            opacity,
-                            transform,
-                            rotateX: '180deg',
-                        }}
-                    >
-                        <img src={avatar} alt="avatar" />
-                    </animated.div>
+                        <animated.div
+                            className='image-container back-side'
+                            style={{
+                                opacity,
+                                transform,
+                                rotateX: '180deg',
+                            }}
+                        >
+                            <img src={avatar} alt="avatar" />
+                        </animated.div>
+                    </div>
                 </div>
             </div>
         </div>

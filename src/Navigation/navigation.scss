@@ -156,8 +156,8 @@
     }
 
     .main {
+        position: fixed;
         margin-top: 70px;
-        height: calc(100vh - 70px) !important;
-        overflow: auto;
+        overflow: hidden;
     }
 }
