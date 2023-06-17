@@ -28,25 +28,23 @@ export const Home = () => {
     const { theme } = useSelector(state => state.app);
 
     return (
-        <>
-            <div className={`home ${theme.data}`}>
-                <BGAnimation>
-                    <ReactFullpage
-                        debug /* Debug logging */
-                        navigation={true}
-                        sectionSelector={SECTION_SEL}
-                        render={() => (
-                            <ReactFullpage.Wrapper>
-                                {fullpages.map(({ component, id }) => (
-                                    <div key={id} className={SEL}>
-                                        {component}
-                                    </div>
-                                ))}
-                            </ReactFullpage.Wrapper>
-                        )}
-                    />
-                </BGAnimation>
-            </div>
-        </>
+        <div className={`home ${theme.data}`}>
+            <BGAnimation>
+                {/* <ReactFullpage
+                    debug
+                    navigation={true}
+                    sectionSelector={SECTION_SEL}
+                    render={() => (
+                        <ReactFullpage.Wrapper>
+                            {fullpages.map(({ component, id }) => (
+                                <div key={id} className={SEL}>
+                                    {component}
+                                </div>
+                            ))}
+                        </ReactFullpage.Wrapper>
+                    )}
+                /> */}
+            </BGAnimation>
+        </div>
     )
 };

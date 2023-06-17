@@ -203,7 +203,7 @@ export const Navigation = ({ children }) => {
             {/* NAVIGATION MENU END */}
 
             {/* CONTENT START*/}
-            <div className="scroll-container">
+            <div className="main">
                 {children}
             </div>
             {/* CONTENT END*/}

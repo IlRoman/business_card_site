@@ -155,9 +155,9 @@
         }
     }
 
-    .scroll-container {
+    .main {
         margin-top: 70px;
-        height: calc(100vh - 70px);
-        overflow: scroll;
+        height: calc(100vh - 70px) !important;
+        overflow: auto;
     }
 }
