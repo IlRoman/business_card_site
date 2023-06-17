@@ -1,4 +1,7 @@
 .work-experience {
+    height: calc(100vh - 70px);
+    overflow: auto;
+
     &.dark {
         background: #0f0c29;
         /* fallback for old browsers */

@@ -6,7 +6,7 @@ export const Page3 = () => {
 
     return (
         <div className='page3'>
-            <div className='page1__wrapper'>
+            <div className='page3__wrapper'>
                 <h1 className='title'>{`${t("Do not judge me strictly for the design, I'm not a designer")} =)`}</h1>
             </div>
         </div>

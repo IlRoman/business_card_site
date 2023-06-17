@@ -49,7 +49,7 @@ const experienceArray = [
 ];
 
 export const WorkExperience = () => {
-    const { language, theme } = useSelector(state => state.app);
+    const { theme } = useSelector(state => state.app);
 
     return (
         <div className={`work-experience ${theme.data}`}>
