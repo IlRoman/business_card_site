@@ -26,17 +26,15 @@ export const Page2 = () => {
 
     return (
         <div className='page2'>
-            <div className='page2__container'>
-                <h1 className='title'>{`${t("front-end stack")}:`}</h1>
-                <div className='table'>
-                    {stack.map(elem => {
-                        return (
-                            <div className='block' key={elem}>
-                                {elem}
-                            </div>
-                        )
-                    })}
-                </div>
+            <h1 className='title'>{`${t("front-end stack")}:`}</h1>
+            <div className='table'>
+                {stack.map(elem => {
+                    return (
+                        <div className='block' key={elem}>
+                            {elem}
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

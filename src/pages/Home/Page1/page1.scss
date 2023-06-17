@@ -1,17 +1,10 @@
 .page1 {
     display: flex;
+    justify-content: center;
     align-items: center;
     border-bottom: 2px solid #fff;
     width: 100%;
-    overflow: hidden;
-    margin-top: 70px;
-    height: calc(100vh - 70px);
-    padding: 0 100px;
-
-    @media(max-width: 420px) {
-        padding: 10px 40px 0 40px;
-        overflow: auto;
-    }
+    height: 100%;
 
     &.home-slide {
         padding: 0 95px;

@@ -16,3 +16,15 @@ a {
     text-decoration: none;
     color: #000;
 }
+
+.desktop {
+    @media (max-width: 604px) {
+        display: none !important;
+    }
+}
+
+.mobile {
+    @media (min-width: 604px) {
+        display: none !important;
+    }
+}

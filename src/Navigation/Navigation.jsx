@@ -12,15 +12,10 @@ import { useSpring, animated } from '@react-spring/web';
 import { Modal } from "../Components/CustomModal/Modal";
 import { TechModal } from "./TechModal/TechModal";
 import "./navigation.scss";
-import "./dark.scss";
-import "./green.scss";
-import "./violet.scss";
-import "./orange.scss";
 
 export const Navigation = ({ children }) => {
     const { language, theme } = useSelector(state => state.app);
     const [menuMobile, setMenuMobile] = useState(false);
-    const [isHeader] = useState(true);
     const [techModal, setTechModal] = useState(false);
     const burgerRef = useRef();
     const mobileMenuRef = useRef();
@@ -77,103 +72,102 @@ export const Navigation = ({ children }) => {
     };
 
     return (
-        <>
-            <div className={`app-navigation ${theme.data}`}>
-                {isHeader && (
-                    <div className="container">
-                        {/* both desktop and mobile */}
-                        <div />
+        <div className="app">
+            {/* NAVIGATION MENU START */}
+            <div className={`app__navigation-wrapper ${theme.data}`}>
+                <div className="navigation">
+                    {/* both desktop and mobile */}
+                    <div />
 
-                        {/* desktop only */}
-                        <animated.div
-                            className="column desktop"
-                            onClick={() => handleToggle(0)}
-                            style={{
-                                scale: x.to({
-                                    range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                                    output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
-                                }),
-                            }}
-                        >
-                            <div className="link-container">
-                                <Link to="/" className="link">{t("home")}</Link>
-                            </div>
-                        </animated.div>
-                        <animated.div
-                            className="column desktop"
-                            onClick={() => {
-                                handleToggle(1);
-                                handleOpenModal();
-                            }}
-                            style={{
-                                scale: y.to({
-                                    range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                                    output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
-                                }),
-                            }}
-                        >
-                            <div className="link-container">
-                                <button className="link">{t("libraries")}</button>
-                            </div>
-                        </animated.div>
-                        <animated.div
-                            className="column desktop"
-                            onClick={() => handleToggle(2)}
-                            style={{
-                                scale: z.to({
-                                    range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                                    output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
-                                }),
-                            }}
-                        >
-                            <div className="link-container">
-                                <Link to="/experience" className="link">
-                                    <div>{t("work_experience")}</div>
-                                    <div>{'(English only)'}</div>
-                                </Link>
-                            </div>
-                        </animated.div>
+                    {/* desktop only */}
+                    <animated.div
+                        className="column desktop"
+                        onClick={() => handleToggle(0)}
+                        style={{
+                            scale: x.to({
+                                range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                                output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                            }),
+                        }}
+                    >
+                        <div className="link-container">
+                            <Link to="/" className="link">{t("home")}</Link>
+                        </div>
+                    </animated.div>
+                    <animated.div
+                        className="column desktop"
+                        onClick={() => {
+                            handleToggle(1);
+                            handleOpenModal();
+                        }}
+                        style={{
+                            scale: y.to({
+                                range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                                output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                            }),
+                        }}
+                    >
+                        <div className="link-container">
+                            <button className="link">{t("libraries")}</button>
+                        </div>
+                    </animated.div>
+                    <animated.div
+                        className="column desktop"
+                        onClick={() => handleToggle(2)}
+                        style={{
+                            scale: z.to({
+                                range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                                output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                            }),
+                        }}
+                    >
+                        <div className="link-container">
+                            <Link to="/experience" className="link">
+                                <div>{t("work_experience")}</div>
+                                <div>{'(English only)'}</div>
+                            </Link>
+                        </div>
+                    </animated.div>
 
-                        {/* mobile only */}
-                        <div className="column mobile">
-                            <img
-                                ref={burgerRef}
-                                src={burger}
-                                className="burger"
-                                alt="navigation menu"
-                                onClick={handleMenuMobile}
-                            />
-                        </div>
-
-                        {/* both desktop and mobile */}
-                        <div className="column dropdown">
-                            <Dropdown
-                                placeholder="Change language"
-                                value={language}
-                                onChange={onChangeLanguage}
-                                options={languages}
-                                label={t('language')}
-                                labelColor="#fff"
-                                isSearch={false}
-                            />
-                        </div>
-                        <div className="column dropdown">
-                            <Dropdown
-                                placeholder="Change theme"
-                                value={theme}
-                                onChange={onChangeTheme}
-                                options={themes}
-                                translate={true}
-                                label={t('change theme')}
-                                labelColor="#fff"
-                                isSearch={false}
-                            />
-                        </div>
-                        <div />
+                    {/* mobile only */}
+                    <div className="column mobile">
+                        <img
+                            ref={burgerRef}
+                            src={burger}
+                            className="burger"
+                            alt="navigation menu"
+                            onClick={handleMenuMobile}
+                        />
                     </div>
-                )}
 
-                {/* mobile only */}
+                    {/* both desktop and mobile */}
+                    <div className="column dropdown">
+                        <Dropdown
+                            placeholder="Change language"
+                            value={language}
+                            onChange={onChangeLanguage}
+                            options={languages}
+                            label={t('language')}
+                            labelColor="#fff"
+                            isSearch={false}
+                        />
+                    </div>
+                    <div className="column dropdown">
+                        <Dropdown
+                            placeholder="Change theme"
+                            value={theme}
+                            onChange={onChangeTheme}
+                            options={themes}
+                            translate={true}
+                            label={t('change theme')}
+                            labelColor="#fff"
+                            isSearch={false}
+                        />
+                    </div>
+                    <div />
+                </div>
+
+                {/* MOBILE MENU START */}
                 {menuMobile && (
                     <div className="mobile mobile-menu" ref={mobileMenuRef}>
                         <div className="link-container">
@@ -204,12 +198,17 @@ export const Navigation = ({ children }) => {
                         </div>
                     </div>
                 )}
+                {/* MOBILE MENU END */}
             </div>
+            {/* NAVIGATION MENU END */}
 
-            {/* Content */}
-            {children}
+            {/* CONTENT START*/}
+            <div className="scroll-container">
+                {children}
+            </div>
+            {/* CONTENT END*/}
 
-            {/* libraries modal */}
+            {/* LIBRARIES MODAL START */}
             {techModal && (
                 <Modal
                     title={t("libraries")}
@@ -222,6 +221,7 @@ export const Navigation = ({ children }) => {
                     <TechModal />
                 </Modal>
             )}
-        </>
+            {/* LIBRARIES MODAL END */}
+        </div>
     )
 };
