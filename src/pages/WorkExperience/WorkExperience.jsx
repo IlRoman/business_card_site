@@ -32,7 +32,7 @@ const experienceArray = [
         date: "2019 - 2019",
         description: "The site of a company providing fitness services. People who register on the site and keep their fitness-diaries under the supervision of a trainer",
         technologies: "HTML5, CSS3, Sass, JavaScript (ES6+), React, Redux, BEM Methodology, Git, REST API, npm",
-        responsibilities: "HTML5, CSS3, Sass, JavaScript (ES6+), React, Redux, BEM Methodology, Git, REST API, npm",
+        responsibilities: "Create pages of application and logic on frontend making different requests to the server",
     },
     {
         date: "2018- 2019",
