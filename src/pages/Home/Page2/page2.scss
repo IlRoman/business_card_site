@@ -1,15 +1,37 @@
 .page2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     border-bottom: 2px solid #fff;
     margin-top: 70px;
     height: calc(100vh - 70px);
 
-    @media(max-width: 420px) {
-        padding: 0 40px;
+    &__container {
+        height: 100%;
+        width: 100%;
         overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media(max-width: 420px) {
+            padding: 0 40px;
+        }
+    }
+
+    .title {
+        font-size: 3em;
+        font-weight: 600;
+        color: #fff;
+        font-family: 'Neucha', cursive;
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        text-align: center;
+
+        @media(max-width: 420px) {
+            margin-top: 20px;
+            font-size: 2em;
+        }
     }
 
     .table {
@@ -21,19 +43,7 @@
 
         @media(max-width: 420px) {
             width: 100%;
-            margin: 40px;
-        }
-    }
-
-    .title {
-        font-size: 3em;
-        font-weight: 600;
-        color: #fff;
-        font-family: 'Neucha', cursive;
-        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-
-        @media(max-width: 420px) {
-            font-size: 2em;
+            margin: 20px 40px;
         }
     }
 
@@ -51,6 +61,7 @@
         @media(max-width: 560px) {
             font-size: 1.5em;
             padding: 5px;
+            margin: 5px;
         }
     }
 }

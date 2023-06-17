@@ -8,6 +8,15 @@
     cursor: pointer;
 }
 
+body {
+    height: 100vh !important;
+    overflow: hidden;
+}
+
+#root {
+    overflow: auto;
+}
+
 a {
     text-decoration: none;
     color: #000;
