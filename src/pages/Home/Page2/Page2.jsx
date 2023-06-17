@@ -18,6 +18,7 @@ const stack = [
     'Module css',
     'AJAX',
     'Axios',
+    'Web sockets'
 ];
 
 export const Page2 = () => {
