@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     margin: 0;
     padding: 0;
@@ -18,14 +22,15 @@ a {
     color: #000;
 }
 
-.desktop {
-    @media (max-width: 604px) {
+
+@media (max-width: 604px) {
+    .desktop {
         display: none !important;
     }
 }
 
-.mobile {
-    @media (min-width: 604px) {
+@media (min-width: 604px) {
+    .mobile {
         display: none !important;
     }
 }

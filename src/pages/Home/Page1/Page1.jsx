@@ -42,7 +42,7 @@ export const Page1 = () => {
 
     return (
         <div className='page1'>
-            <div className='page1__wrapper'>
+            <div className="page1__wrapper">
                 <animated.div className='block' style={props}>
                     <p className='top-text'>{t("website developer")}</p>
                     <h1>{t("hello")}</h1>
