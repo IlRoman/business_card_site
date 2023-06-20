@@ -50,7 +50,6 @@ export const Page1 = () => {
                     <p className='about-me'>{t("about me")}:</p>
                     <ul>
                         <li>{t("experience: 4+ years in web development")}</li>
-                        <li>{`${t("front-end stack")}: React, Next.js, Typescript, Redux.`}</li>
                         <li>{t("area of expertise")}</li>
                         <li>{t("development for me")}</li>
                     </ul>

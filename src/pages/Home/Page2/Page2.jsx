@@ -1,25 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { frontensStack } from '../../../helpers/constants';
 import './page2.scss';
-
-const stack = [
-    'HTML 5',
-    'JavaScript ES6+',
-    'React',
-    'Next.js',
-    'Typescript',
-    'Redux',
-    'Redux toolkit',
-    'Redux thunk',
-    'Redux saga',
-    'CSS 3+',
-    'SASS',
-    'SCSS',
-    'Styled Component',
-    'Module css',
-    'AJAX',
-    'Axios',
-    'Web sockets'
-];
 
 export const Page2 = () => {
     const { t } = useTranslation();
@@ -29,7 +10,7 @@ export const Page2 = () => {
             <div className='page2__wrapper'>
                 <h1 className='title'>{`${t("front-end stack")}:`}</h1>
                 <div className='table'>
-                    {stack.map(elem => {
+                    {frontensStack.map(elem => {
                         return (
                             <div className='block' key={elem}>
                                 {elem}

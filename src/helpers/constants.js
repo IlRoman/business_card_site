@@ -35,3 +35,31 @@ export const themes = [
         color: '#eb5234'
     }
 ];
+
+export const frontensStack = [
+    'HTML5',
+    'JavaScript (ES6+)',
+    'React',
+    'Next.js',
+    'Gatsby',
+    'Typescript',
+    'Redux',
+    'Redux toolkit',
+    'Redux thunk',
+    'Redux saga',
+    'MobX',
+    'CSS (3+)',
+    'Module CSS',
+    'SASS',
+    'SCSS',
+    'Bootstrap',
+    'Tailwind',
+    'Styled Components',
+    'Formik',
+    'Material UI',
+    'AJAX',
+    'GraphQL',
+    'Axios',
+    'Web sockets',
+    'PWA',
+];
