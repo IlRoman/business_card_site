@@ -1,0 +1,20 @@
+{
+    "name": "Business Card",
+    "short_name": "bc",
+    "theme_color": "#358bd0",
+    "background_color": "#2f8dd8",
+    "display": "standalone",
+    "start_url": ".",
+    "icons": [
+        {
+            "src": "/icons/start-icon-94.png",
+            "sizes": "94x94",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/start-icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}
