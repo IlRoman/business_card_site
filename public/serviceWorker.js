@@ -3,6 +3,7 @@ const dynamicCacheName = 'd-app-v3'
 
 const assetUrls = [
     'index.html',
+    'offline.html'
 ];
 
 self.addEventListener('install', async event => {
