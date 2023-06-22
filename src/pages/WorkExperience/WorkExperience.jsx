@@ -1,7 +1,8 @@
-import { useSelector } from 'react-redux';
 import { BGAnimation } from '../BGAnimation/BGAnimation';
 import star from '../../assets/icons/star.svg';
+import { appStore } from '../../store/appStore';
 import './work-experience.scss';
+import { observer } from 'mobx-react-lite';
 
 const experienceArray = [
     {
@@ -48,8 +49,8 @@ const experienceArray = [
     },
 ];
 
-export const WorkExperience = () => {
-    const { theme } = useSelector(state => state.app);
+export const WorkExperience = observer(() => {
+    const { theme } = appStore;
 
     return (
         <div className={`work-experience ${theme.data}`}>
@@ -81,4 +82,4 @@ export const WorkExperience = () => {
             </BGAnimation>
         </div>
     )
-};
+});

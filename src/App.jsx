@@ -2,8 +2,6 @@ import { useEffect } from 'react';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import i18n from 'i18next';
-import { store } from './redux/store';
-import { Provider } from 'react-redux';
 import { Home } from "./pages/Home/Home";
 import { Navigation } from './Navigation/Navigation';
 import { WorkExperience } from './pages/WorkExperience/WorkExperience';
@@ -22,39 +20,37 @@ const App = () => {
   }, []);
 
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={(
-              <Navigation>
-                <Home />
-              </Navigation>)}
-          />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={(
+            <Navigation>
+              <Home />
+            </Navigation>)}
+        />
 
-          <Route
-            path="/experience"
-            exact
-            element={(
-              <Navigation>
-                <WorkExperience />
-              </Navigation>)}
-          />
+        <Route
+          path="/experience"
+          exact
+          element={(
+            <Navigation>
+              <WorkExperience />
+            </Navigation>)}
+        />
 
-          <Route
-            path="*"
-            element={(
-              <Navigation>
-                <Page404 />
-              </Navigation>)}
-          />
-        </ Routes>
-      </BrowserRouter>
-    </Provider>
+        <Route
+          path="*"
+          element={(
+            <Navigation>
+              <Page404 />
+            </Navigation>)}
+        />
+      </ Routes>
+    </BrowserRouter>
   );
-}
+};
 
 i18n
   .use(Backend)

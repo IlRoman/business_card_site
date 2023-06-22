@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import { appStore } from '../../store/appStore';
 import './page404.scss';
-import { useSelector } from 'react-redux';
+import { observer } from 'mobx-react-lite';
 
-export const Page404 = () => {
-    const { theme } = useSelector(state => state.app);
+export const Page404 = observer(() => {
+    const { theme } = appStore;
 
     return (
         <div className={`page404 ${theme.data}`}>
@@ -15,4 +16,4 @@ export const Page404 = () => {
             </div>
         </div>
     )
-};
+});

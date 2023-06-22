@@ -1,27 +1,26 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useClickOutside } from "../hooks/useClickOutside";
 import Dropdown from "../Components/Dropdown/Dropdown";
 import i18n from "i18next";
 import burger from '../assets/icons/burger-menu.svg';
 import { languages, themes } from "../helpers/constants";
-import { setLanguage, setTheme } from "../redux/appSlice";
 import { useSpring, animated } from '@react-spring/web';
 import { Modal } from "../Components/CustomModal/Modal";
 import { TechModal } from "./TechModal/TechModal";
+import { appStore } from "../store/appStore";
 import "./navigation.scss";
+import { observer } from "mobx-react-lite";
 
-export const Navigation = ({ children }) => {
-    const { language, theme } = useSelector(state => state.app);
+export const Navigation = observer(({ children }) => {
     const [menuMobile, setMenuMobile] = useState(false);
     const [techModal, setTechModal] = useState(false);
     const burgerRef = useRef();
     const mobileMenuRef = useRef();
     const { t } = useTranslation();
-    const dispatch = useDispatch();
     const [animations, toggle] = useState([true, true, true]);
+    const { language, theme, setLanguage, setTheme } = appStore;
 
     const { x, y, z } = useSpring({
         from: { x: 0, y: 0, z: 0 },
@@ -40,7 +39,7 @@ export const Navigation = ({ children }) => {
     };
 
     const onChangeLanguage = (selectedElement = { title: 'English', data: 'en', }) => {
-        dispatch(setLanguage(selectedElement));
+        setLanguage(selectedElement);
         i18n.changeLanguage(selectedElement?.data || 'en');
         localStorage.setItem('language', JSON.stringify(selectedElement));
     };
@@ -51,7 +50,7 @@ export const Navigation = ({ children }) => {
     }, []);
 
     const onChangeTheme = (theme) => {
-        dispatch(setTheme(theme));
+        setTheme(theme);
         localStorage.setItem('theme', JSON.stringify(theme));
     };
 
@@ -222,6 +221,5 @@ export const Navigation = ({ children }) => {
                 </Modal>
             )}
             {/* LIBRARIES MODAL END */}
-        </div>
-    )
-};
+        </div>)
+});
