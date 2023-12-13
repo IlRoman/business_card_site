@@ -3,6 +3,7 @@ import { useClickOutside } from '../../hooks/useClickOutside';
 import arrow from '../../assets/icons/arrow.png';
 import './dropdown.scss';
 import { useTranslation } from 'react-i18next';
+import classNames from 'classnames';
 
 const defaultOptions = [{ title: 'no options', data: 'no options' }];
 
@@ -83,6 +84,13 @@ const CustomDropdown = ({
         } else return arr;
     };
 
+    const inputContainerClasses = classNames(
+        'input-container',
+        formData?.hasError && formData?.touched && 'input-container_error'
+    );
+    const arrowClasses = classNames('arrow', open && 'arrow_up');
+    const selectClasses = classNames('select', selectVariant)
+
     return (
         <div className="custom-dropdown" ref={ref}>
             {/* label above the input */}
@@ -95,7 +103,7 @@ const CustomDropdown = ({
             )}
 
             <div
-                className={`input-container ${formData?.hasError && formData?.touched ? 'input-container_error' : ''}`}
+                className={inputContainerClasses}
                 onClick={onOpen}
             >
                 {isSearch ? (
@@ -130,12 +138,12 @@ const CustomDropdown = ({
 
                 {/* arrow icon */}
                 <div className="icon-container">
-                    <img className={`arrow ${open ? 'arrow_up' : ''}`} src={arrow} alt="arrow" />
+                    <img className={arrowClasses} src={arrow} alt="arrow" />
                 </div>
             </div>
 
             {open && (
-                <div className={`select ${selectVariant}`}>
+                <div className={selectClasses}>
                     {currentOptions.length ? (
                         getOptionsOrder().map((option => {
                             return (

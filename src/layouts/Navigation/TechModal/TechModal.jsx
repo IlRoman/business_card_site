@@ -1,20 +1,21 @@
 import './tech-modal.scss';
 
 const stack = [
-    "@fullpage/react-fullpage: ^0.1.40",
-    "@react-spring/web: ^9.7.2",
-    "@reduxjs/toolkit: ^1.9.5",
-    "i18next: ^22.5.0",
-    "i18next-http-backend: ^2.2.1",
-    "react: ^18.2.0",
-    "react-dom: ^18.2.0",
-    "react-i18next: ^12.3.1",
-    "react-redux: ^8.0.7",
-    "react-router-dom: ^6.11.2",
-    "react-scripts: 5.0.1",
-    "react-use-measure: ^2.1.1",
-    "redux: ^4.2.1",
-    "sass: ^1.62.1",
+    "@fullpage/react-fullpage: v0.1.40",
+    "@react-spring/web: v9.7.2",
+    "@reduxjs/toolkit: v1.9.5",
+    "i18next: v22.5.0",
+    "i18next-http-backend: v2.2.1",
+    "react: v18.2.0",
+    "react-dom: v18.2.0",
+    "react-i18next: v12.3.1",
+    "react-redux: v8.0.7",
+    "react-router-dom: v6.11.2",
+    "react-scripts: v5.0.1",
+    "react-use-measure: v2.1.1",
+    "redux: v4.2.1",
+    "sass: v1.62.1",
+    "classnames: v2.3.2",
 ];
 
 export const TechModal = () => {

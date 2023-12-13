@@ -42,7 +42,7 @@ const App = () => {
             path="/experience"
             exact
             element={(
-                <Navigation>
+              <Navigation>
                 <BGAnimation>
                   <WorkExperience />
                 </BGAnimation>

@@ -12,6 +12,7 @@ import { useSpring, animated } from '@react-spring/web';
 import { Modal } from "../../Components/CustomModal/Modal";
 import { TechModal } from "./TechModal/TechModal";
 import "./navigation.scss";
+import classNames from "classnames";
 
 export const Navigation = ({ children }) => {
     const { language, theme } = useSelector(state => state.app);
@@ -71,10 +72,12 @@ export const Navigation = ({ children }) => {
         setTechModal(false);
     };
 
+    const appNavigationWrapperClasses = classNames('app__navigation-wrapper', theme.data)
+
     return (
         <div className="app">
             {/* NAVIGATION MENU START */}
-            <div className={`app__navigation-wrapper ${theme.data}`}>
+            <div className={appNavigationWrapperClasses}>
                 <div className="navigation">
                     {/* both desktop and mobile */}
                     <div />
