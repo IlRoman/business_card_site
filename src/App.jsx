@@ -5,7 +5,7 @@ import i18n from 'i18next';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { Home } from "./pages/Home/Home";
-import { Navigation } from './Navigation/Navigation';
+import { Navigation } from './layouts/Navigation/Navigation';
 import { WorkExperience } from './pages/WorkExperience/WorkExperience';
 import { Page404 } from "./pages/Page404/Page404";
 import {
@@ -13,6 +13,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { BGAnimation } from './layouts/BGAnimation/BGAnimation';
 
 const App = () => {
   // set default language from localstorage
@@ -30,17 +31,23 @@ const App = () => {
             exact
             element={(
               <Navigation>
-                <Home />
-              </Navigation>)}
+                <BGAnimation>
+                  <Home />
+                </BGAnimation>
+              </Navigation>
+            )}
           />
 
           <Route
             path="/experience"
             exact
             element={(
-              <Navigation>
-                <WorkExperience />
-              </Navigation>)}
+                <Navigation>
+                <BGAnimation>
+                  <WorkExperience />
+                </BGAnimation>
+              </Navigation>
+            )}
           />
 
           <Route
@@ -48,7 +55,8 @@ const App = () => {
             element={(
               <Navigation>
                 <Page404 />
-              </Navigation>)}
+              </Navigation>
+            )}
           />
         </ Routes>
       </BrowserRouter>

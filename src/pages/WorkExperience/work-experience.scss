@@ -1,78 +1,41 @@
 .work-experience {
-    height: calc(100vh - 70px);
-    overflow: auto;
+  height: calc(100vh - 70px);
+  overflow: auto;
 
-    &.dark {
-        background: #0f0c29;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  .container {
+    padding: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .block {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    text-shadow: #fc0 1px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bottom-text {
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em black;
+  }
+
+  .stars-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
     }
 
-    &.green {
-        background: #52c234;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #061700, #52c234);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #061700, #52c234);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    img {
+      width: 20px;
+      margin: 10px;
     }
-
-    &.violet {
-        background: #ff00cc;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #333399, #ff00cc);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #333399, #ff00cc);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    &.orange {
-        background: #f12711;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #f5af19, #f12711);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #f5af19, #f12711);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    .container {
-        padding: 40px;
-        color: #fff;
-        font-size: 16px;
-    }
-
-    .block {
-        margin-top: 20px;
-        padding: 20px;
-        border: 2px solid grey;
-        border-radius: 10px;
-        text-shadow: #FC0 1px 0 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .bottom-text {
-        margin-top: 20px;
-        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em black;
-    }
-
-    .stars-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        @media(max-width: 800px) {
-            flex-direction: column;
-        }
-
-        img {
-            width: 20px;
-            margin: 10px;
-        }
-    }
+  }
 }
