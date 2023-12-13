@@ -1,0 +1,16 @@
+.custom-button {
+  cursor: pointer;
+  text-decoration: none;
+  background: #e55039aa;
+  color: #ffffff;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: 0.4s;
+
+  &:hover {
+    background: #e55039;
+  }
+}

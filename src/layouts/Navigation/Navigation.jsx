@@ -72,7 +72,7 @@ export const Navigation = ({ children }) => {
         setTechModal(false);
     };
 
-    const appNavigationWrapperClasses = classNames('app__navigation-wrapper', theme.data)
+    const appNavigationWrapperClasses = classNames('app__navigation-wrapper', theme.data);
 
     return (
         <div className="app">

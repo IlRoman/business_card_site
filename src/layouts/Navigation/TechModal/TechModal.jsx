@@ -16,6 +16,7 @@ const stack = [
     "redux: v4.2.1",
     "sass: v1.62.1",
     "classnames: v2.3.2",
+    "react-error-boundary: v4.0.11",
 ];
 
 export const TechModal = () => {

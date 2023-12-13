@@ -14,6 +14,8 @@ import {
   Route,
 } from "react-router-dom";
 import { BGAnimation } from './layouts/BGAnimation/BGAnimation';
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallBack } from './pages/ErrorFallBack/ErrorFallBack';
 
 const App = () => {
   // set default language from localstorage
@@ -24,42 +26,54 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={(
-              <Navigation>
-                <BGAnimation>
-                  <Home />
-                </BGAnimation>
-              </Navigation>
-            )}
-          />
+      <ErrorBoundary
+        fallbackRender={
+          (errorData) => (
+            <BGAnimation>
+              <ErrorFallBack errorData={errorData}/>
+            </BGAnimation>
+          )
+        }
+      >
+          <BrowserRouter>
+            <Routes>
+              <Route
+                path="/"
+                exact
+                element={(
+                  <Navigation>
+                    <BGAnimation>
+                      <Home />
+                    </BGAnimation>
+                  </Navigation>
+                )}
+              />
 
-          <Route
-            path="/experience"
-            exact
-            element={(
-              <Navigation>
-                <BGAnimation>
-                  <WorkExperience />
-                </BGAnimation>
-              </Navigation>
-            )}
-          />
+              <Route
+                path="/experience"
+                exact
+                element={(
+                  <Navigation>
+                    <BGAnimation>
+                      <WorkExperience />
+                    </BGAnimation>
+                  </Navigation>
+                )}
+              />
 
-          <Route
-            path="*"
-            element={(
-              <Navigation>
-                <Page404 />
-              </Navigation>
-            )}
-          />
-        </ Routes>
-      </BrowserRouter>
+              <Route
+                path="*"
+                element={(
+                  <Navigation>
+                    <BGAnimation>
+                      <Page404 />
+                    </BGAnimation>
+                  </Navigation>
+                )}
+              />
+            </ Routes>
+          </BrowserRouter>
+      </ErrorBoundary>
     </Provider>
   );
 }
