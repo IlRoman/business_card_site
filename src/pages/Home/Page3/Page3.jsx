@@ -1,14 +1,16 @@
-import { useTranslation } from 'react-i18next';
-import './page3.scss';
+import { useTranslation } from "react-i18next";
+import "./page3.scss";
 
 export const Page3 = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div className='page3'>
-            <div className='page3__wrapper'>
-                <h1 className='title'>{`${t("Do not judge me strictly for the design, I'm not a designer")} =)`}</h1>
-            </div>
-        </div>
-    )
+  return (
+    <div className="page3">
+      <div className="page3__wrapper">
+        <h1 className="title">{`${t(
+          "Do not judge me strictly for the design, I'm not a designer"
+        )} =)`}</h1>
+      </div>
+    </div>
+  );
 };

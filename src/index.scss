@@ -1,31 +1,31 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh !important;
-    overflow: hidden !important;
+  height: 100vh !important;
+  overflow: hidden !important;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 .desktop {
-    @media (max-width: 604px) {
-        display: none !important;
-    }
+  @media (max-width: 604px) {
+    display: none !important;
+  }
 }
 
 .mobile {
-    @media (min-width: 604px) {
-        display: none !important;
-    }
+  @media (min-width: 604px) {
+    display: none !important;
+  }
 }

@@ -1,31 +1,31 @@
 .page3 {
-    border-bottom: 2px solid #fff;
-    height: calc(100vh - 70px);
-    overflow-y: auto;
+  border-bottom: 2px solid #fff;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
 
-    &__wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 30px 95px;
-        height: 100%;
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 95px;
+    height: 100%;
 
-        @media(max-width: 670px) {
-            flex-direction: column;
-            padding: 20px 40px;
-        }
+    @media (max-width: 670px) {
+      flex-direction: column;
+      padding: 20px 40px;
     }
+  }
 
-    .title {
-        font-size: 4em;
-        font-weight: 600;
-        color: #fff;
-        text-align: center;
-        margin: 40px;
-        text-shadow: #FC0 1px 0 10px;
+  .title {
+    font-size: 4em;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin: 40px;
+    text-shadow: #fc0 1px 0 10px;
 
-        @media(max-width: 420px) {
-            font-size: 2em;
-        }
+    @media (max-width: 420px) {
+      font-size: 2em;
     }
+  }
 }
