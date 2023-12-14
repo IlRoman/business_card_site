@@ -11,8 +11,9 @@ import { setLanguage, setTheme } from "../../redux/appSlice";
 import { useSpring, animated } from "@react-spring/web";
 import { Modal } from "../../Components/CustomModal/Modal";
 import { TechModal } from "./TechModal/TechModal";
-import "./navigation.scss";
 import classNames from "classnames";
+import { createPortal } from "react-dom";
+import "./navigation.scss";
 
 export const Navigation = ({ children }) => {
   const { language, theme } = useSelector((state) => state.app);
@@ -221,18 +222,20 @@ export const Navigation = ({ children }) => {
       {/* CONTENT END*/}
 
       {/* LIBRARIES MODAL START */}
-      {techModal && (
-        <Modal
-          title={t("libraries")}
-          subtitle={t("List of libraries that were used on this site")}
-          close={handleCloseModal}
-          cancelBtn={true}
-          submitBtn={false}
-          closeWithoutHide={true}
-        >
-          <TechModal />
-        </Modal>
-      )}
+      {techModal &&
+        createPortal(
+          <Modal
+            title={t("libraries")}
+            subtitle={t("List of libraries that were used on this site")}
+            close={handleCloseModal}
+            cancelBtn={true}
+            submitBtn={false}
+            closeWithoutHide={true}
+          >
+            <TechModal />
+          </Modal>,
+          document.body
+        )}
       {/* LIBRARIES MODAL END */}
     </div>
   );
